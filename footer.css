@@ -1,0 +1,52 @@
+
+body {
+    margin: 0;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: .75fr 3fr .5fr;
+    height: 6.5rem;
+    background: #c9c9c9;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+}
+
+.logo img {
+    height: 3rem;
+    width: 3rem;
+    padding: 0;
+}
+
+.logo h5 {
+    margin: 0;
+}
+
+.site-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.social-link {
+    padding-right: .5em;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}

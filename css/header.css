@@ -1,0 +1,89 @@
+@import  'main.css';
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;   
+}
+
+.header-wrapper > .logo-wrapper > .logo {
+    height: 25vh;
+    justify-content: space-around;
+}
+
+.logo > img {
+    height: 25vh;
+}
+
+.link-wrapper {
+    display: flex;
+    justify-content: end;
+    height: 100%;
+}
+
+.link-one {
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.link-one a {
+    transition: 0.5s;
+    text-decoration: none;
+    color: black
+    font-family: 'Noto Serif', serif;
+    font-size: 30px;
+}
+
+.link-one:hover {
+    background-color: var(--cust-grey);
+}
+
+.link-one a:hover {
+    text-decoration: none;
+    color: var(--off-white);
+}
+
+.link-two {
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.link-two a {
+    transition: 0.5s;
+    text-decoration: none;
+    color: black
+    font-family: 'Noto Serif', serif;
+    font-size: 30px;
+}
+
+.link-two:hover {
+    background-color: var(--cust-grey);
+}
+
+.link-two a:hover {
+    text-decoration: none;
+    color: var(--off-white);
+}
+
+.link-three {
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.link-three a {
+    transition: 0.5s;
+    text-decoration: none;   
+    color: black
+    font-family: 'Noto Serif', serif;
+    font-size: 30px;
+}
+
+.link-three:hover {
+    background-color: var(--cust-grey);
+}
+
+.link-three a:hover {
+    text-decoration: none;
+    color: var(--off-white);
+}

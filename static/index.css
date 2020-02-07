@@ -1,7 +1,7 @@
 @import  'main.css';
 
 .container{
-    background-image: url('../images/revolt-164_6wVEHfI-unsplash.jpg');
+    background-image: url("/static/images/revolt-164_6wVEHfI-unsplash.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

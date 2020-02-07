@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
+import templates, static
 
 app = Flask(__name__)
 
@@ -34,9 +35,13 @@ class ShoeSchema(ma.Schema):
 shoe_schema = ShoeSchema()
 shoes_schema = ShoeSchema(many=True)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 
 # Endpoint to create a new guide
+
 @app.route('/shoe', methods=['POST'])
 def add_shoe():
     name = request.json['name']

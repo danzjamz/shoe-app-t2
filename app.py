@@ -1,6 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+import templates
 import os
 
 app = Flask(__name__)
@@ -35,6 +36,11 @@ shoe_schema = ShoeSchema()
 shoes_schema = ShoeSchema(many=True)
 
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 
 # Endpoint to create a new guide
 @app.route('/shoe', methods=['POST'])
@@ -66,7 +72,7 @@ def get_shoes():
 # endpoint for querying a single guide
 @app.route('/shoe/<id>', methods=['GET'])
 def get_shoe(id):
-    shoe = shoe.query.get(id)
+    shoe = Shoe.query.get(id)
     return shoe_schema.jsonify(shoe)
 
 
@@ -79,10 +85,10 @@ def shoe_update(id):
     size = request.json['size']
     price = request.json['price']
 
-    guide.name = name
-    guide.description = description
-    guide.size = size
-    guide.price = price
+    shoe.name = name
+    shoe.description = description
+    shoe.size = size
+    shoe.price = price
 
     db.session.commit()
     return shoe_schema.jsonify(shoe)
@@ -99,3 +105,5 @@ def shoe_delete(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    

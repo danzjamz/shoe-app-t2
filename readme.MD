@@ -98,6 +98,7 @@ $ git branch -d branchName
 $ git checkout -b userName-task
 ```
 
+Import main css to your css with ```@import 'main.css';```
 
 # App in a Day MVP
 - UI / UX
@@ -139,7 +140,6 @@ $ git checkout -b userName-task
   - Delete a Shoe
   - Flask app should render all the html via templates
 Collapse
-
 
 
 

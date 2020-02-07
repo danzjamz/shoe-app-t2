@@ -102,7 +102,7 @@ $ git checkout -b userName-task
 # App in a Day MVP
 - UI / UX
 - Pages
-  1. NavBar
+  1. NavBar 
   2. Homepage
   3. About
   4. Contact

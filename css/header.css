@@ -30,7 +30,7 @@
 .link-one a {
     transition: 0.5s;
     text-decoration: none;
-    color: black
+    color: black;
     font-family: 'Noto Serif', serif;
     font-size: 30px;
 }
@@ -52,7 +52,7 @@
 .link-two a {
     transition: 0.5s;
     text-decoration: none;
-    color: black
+    color: black;
     font-family: 'Noto Serif', serif;
     font-size: 30px;
 }
@@ -74,7 +74,7 @@
 .link-three a {
     transition: 0.5s;
     text-decoration: none;   
-    color: black
+    color: black;
     font-family: 'Noto Serif', serif;
     font-size: 30px;
 }

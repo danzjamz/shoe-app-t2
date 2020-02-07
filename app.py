@@ -28,7 +28,7 @@ class Shoe(db.Model):
 
 class ShoeSchema(ma.Schema):
     class Meta:
-        fields = ('name', 'description', 'size', 'price')
+        fields = ('name', 'description', 'size', 'price', 'id')
 
 
 shoe_schema = ShoeSchema()
@@ -66,7 +66,7 @@ def get_shoes():
 # endpoint for querying a single guide
 @app.route('/shoe/<id>', methods=['GET'])
 def get_shoe(id):
-    shoe = shoe.query.get(id)
+    shoe = Shoe.query.get(id)
     return shoe_schema.jsonify(shoe)
 
 
@@ -79,10 +79,10 @@ def shoe_update(id):
     size = request.json['size']
     price = request.json['price']
 
-    guide.name = name
-    guide.description = description
-    guide.size = size
-    guide.price = price
+    shoe.name = name
+    shoe.description = description
+    shoe.size = size
+    shoe.price = price
 
     db.session.commit()
     return shoe_schema.jsonify(shoe)

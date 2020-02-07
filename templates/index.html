@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    {{ url_for('static', filename='index.css') }}
-    {{ url_for('static', filename='revolt-164_6wVEHfI-unsplash.jpg') }}
+    
+    <link rel="stylesheet" href="../static/index.css">
 
-
-
+    <style>
+        .container {
+            background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjQzMzEwfQ&auto=format&fit=crop&w=1950&q=80')  ;
+        }
+    </style>
+    
+    
 </head>
 <body>
     <div class="container">

@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-import templates
+import templates, static
 import os
 
 app = Flask(__name__)
@@ -12,24 +12,25 @@ ma = Marshmallow(app)
 db = SQLAlchemy(app)
 
 
-# This is building and assigning the key value pairs, or database layout or format, within the database
 class Shoe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=False)
     description = db.Column(db.String(144), unique=False)
     size = db.Column(db.String(144), unique=False)
     price = db.Column(db.String(144), unique=False)
+    img = db.Column(db.String(144), unique=False)
 
-    def __init__(self, name, description, size, price):
+    def __init__(self, name, description, size, price, img):
         self.name = name
         self.description = description
         self.size = size
         self.price = price
+        self.img = img
 
 
 class ShoeSchema(ma.Schema):
     class Meta:
-        fields = ('name', 'description', 'size', 'price')
+        fields = ('name', 'description', 'size', 'price', 'img')
 
 
 shoe_schema = ShoeSchema()
@@ -42,15 +43,15 @@ def index():
 
 
 
-# Endpoint to create a new guide
 @app.route('/shoe', methods=['POST'])
 def add_shoe():
-    name = request.json['name']
     description = request.json['description']
+    name = request.json['name']
     size = request.json['size']
     price = request.json['price']
+    img = request.json['img']
 
-    new_shoe = Shoe(name, description, size, price)
+    new_shoe = Shoe(name, description, size, price, img)
 
     db.session.add(new_shoe)
     db.session.commit()
@@ -61,7 +62,6 @@ def add_shoe():
     return shoe_schema.jsonify(shoe)
 
 
-# endpoint to query all guides
 @app.route('/shoes', methods=['GET'])
 def get_shoes():
     all_shoes = Shoe.query.all()
@@ -69,14 +69,14 @@ def get_shoes():
     return jsonify(result)
 
 
-# endpoint for querying a single guide
+
 @app.route('/shoe/<id>', methods=['GET'])
 def get_shoe(id):
     shoe = Shoe.query.get(id)
     return shoe_schema.jsonify(shoe)
 
 
-# endpoint for updating a guide
+
 @app.route('/shoe/<id>', methods=['PUT'])
 def shoe_update(id):
     shoe = Shoe.query.get(id)
@@ -84,16 +84,17 @@ def shoe_update(id):
     description = request.json['description']
     size = request.json['size']
     price = request.json['price']
+    img = request.json['img']
 
     shoe.name = name
     shoe.description = description
     shoe.size = size
     shoe.price = price
+    shoe.img = img
 
     db.session.commit()
     return shoe_schema.jsonify(shoe)
 
-# endpoint for deleting a record
 @app.route('/shoe/<id>', methods=['DELETE'])
 def shoe_delete(id):
     shoe = Shoe.query.get(id)

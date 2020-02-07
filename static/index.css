@@ -1,0 +1,20 @@
+@import  'main.css';
+
+.container{
+    background-image: url("/static/images/revolt-164_6wVEHfI-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.container > .statement {
+    font-family: 'Oswald', sans-serif;
+    align-self: center;
+    color: var(--off-white);
+}

@@ -1,0 +1,31 @@
+@media (max-width: 615px) {
+    .header-wrapper {
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+@media (max-width: 615px) {
+    .link-wrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 615px) {
+    .link-one {
+        padding: none;
+    }
+}
+
+@media (max-width: 615px) {
+    .link-two {
+        padding: none;
+    }
+}
+
+@media (max-width: 615px) {
+    .link-three {
+        padding: none;
+    }
+}

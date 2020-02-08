@@ -1,3 +1,5 @@
+@import "main.css"
+
 body {
     margin: 0;
 }
@@ -37,7 +39,7 @@ body {
     text-align: center;
 }
 .seo-header, .product-header, .intro-type .container h1.white, .company-heading h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'oswald', sans-serif;
     font-weight: 100 !important;
     text-transform: capitalize;
     font-size: 65px;
@@ -48,13 +50,13 @@ body {
     font-size: 50px;
 }
 .company-sections h2, .company-sections h3, .careers-sections h2, .perks-section h2 {
-    font-family: 'proxima-nova', sans-serif;
+    font-family: 'open sans', sans-serif;
 }
 .company-sections h3 {
     font-size: 25px;
     font-weight: 700;
     margin: 14px 0;
-    font-family: 'proxima-nova', sans-serif;
+    font-family: 'open sans', sans-serif;
     text-transform: capitalize;
 }
 .red-border {

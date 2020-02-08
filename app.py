@@ -1,8 +1,11 @@
+
 from flask import Flask, request, jsonify, render_template, redirect
+
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import templates, static
 import os
+import templates, static
 
 app = Flask(__name__)
 
@@ -33,13 +36,18 @@ class ShoeSchema(ma.Schema):
         fields = ('name', 'description', 'size', 'price', 'img')
 
 
+
 shoe_schema = ShoeSchema()
 shoes_schema = ShoeSchema(many=True)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 
 
@@ -90,7 +98,9 @@ def shoe_update(id):
     shoe.description = description
     shoe.size = size
     shoe.price = price
+
     shoe.img = img
+
 
     db.session.commit()
     return shoe_schema.jsonify(shoe)

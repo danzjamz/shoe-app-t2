@@ -1,3 +1,8 @@
+# Project current status
+- App-in-a-day "Flaming Shoes" Team project at Bottega ... 2 weeks newbies!
+- Built with Python, HTML5, and CSS.
+- Needs navbar on everypage
+
 # How to start
 ​
 ### Have your git master walk you through these steps.

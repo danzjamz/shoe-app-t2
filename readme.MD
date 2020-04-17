@@ -2,6 +2,7 @@
 - App-in-a-day "Flaming Shoes" Team project at Bottega ... 2 weeks newbies!
 - Built with Python, HTML5, and CSS.
 - Needs navbar on everypage
+- Needs more content 
 
 # How to start
 ​
